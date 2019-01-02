@@ -1,14 +1,15 @@
 A cleaner way to organize your aliases.
 
-Clone the repo content in ~/.bash_aliases.d.
+Create directory ~/.bash_aliases.d and put all your aliases there;
+The convention is to use files with the .profile extention.
 
-Add the following to your .bash_rc:
+Add the following lines to your .bash_rc:
 
 #Add all my custom aliases
-if [ -d ~/.bash_alieses.d ]; then
-    for filename in ~/.bash_aliases.d
-    do
-        . "$filename"
+if [ -d ~/.bash_aliases.d ]; then
+    for filename in ~/.bash_aliases.d/*.profile; do
+        . "$filename";
     done
 fi
 
+Changes will apply when you restart bash or open a new terminal window.
