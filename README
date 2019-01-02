@@ -1,0 +1,14 @@
+A cleaner way to organize your aliases.
+
+Clone the repo content in ~/.bash_aliases.d.
+
+Add the following to your .bash_rc:
+
+#Add all my custom aliases
+if [ -d ~/.bash_alieses.d ]; then
+    for filename in ~/.bash_aliases.d
+    do
+        . "$filename"
+    done
+fi
+
